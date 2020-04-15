@@ -1,0 +1,6 @@
+language: java
+jdk:
+  - openjdk8
+before_install:
+  - mkdir -p ~/.m2/repository/de/mpicbg/ulman/CTC-paper-FijiPlugins/1.4.5/
+  - wget https://raw.githubusercontent.com/CellTrackingChallenge/CTC-FijiPlugins/master/release/CTC-paper-FijiPlugins-1.4.5.jar -O ~/.m2/repository/de/mpicbg/ulman/CTC-paper-FijiPlugins/1.4.5/CTC-paper-FijiPlugins-1.4.5.jar
