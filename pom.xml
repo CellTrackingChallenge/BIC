@@ -124,7 +124,7 @@
 	</ciManagement>
 
 	<properties>
-		<package-name>de.mpicbg.ulman.ctc</package-name>
+		<package-name>de.mpicbg.ulman.fusion</package-name>
 		<license.licenseName>BSD 2-Clause</license.licenseName>
 		<license.copyrightOwners>xulman</license.copyrightOwners>
 		<license.projectName>label-fusion-BIC</license.projectName>

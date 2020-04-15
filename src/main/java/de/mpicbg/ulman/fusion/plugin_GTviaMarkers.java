@@ -1,13 +1,4 @@
-/*
- * CC BY-SA 4.0
- *
- * The code is licensed with "Attribution-ShareAlike 4.0 International license".
- * See the license details:
- *     https://creativecommons.org/licenses/by-sa/4.0/
- *
- * Copyright (C) 2017 Vladimír Ulman
- */
-package de.mpicbg.ulman.ctc;
+package de.mpicbg.ulman.fusion;
 
 import org.scijava.ItemVisibility;
 import org.scijava.widget.FileWidget;
@@ -33,12 +24,12 @@ import java.text.ParseException;
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 import org.jhotdraw.samples.svg.gui.ProgressIndicator;
-import de.mpicbg.ulman.ctc.util.ButtonHandler;
+import de.mpicbg.ulman.fusion.util.ButtonHandler;
 
 import java.awt.Button;
 import java.awt.Dimension;
 
-import de.mpicbg.ulman.ctc.workers.machineGTViaMarkers_Worker;
+import de.mpicbg.ulman.fusion.workers.machineGTViaMarkers_Worker;
 import de.mpicbg.ulman.ctc.util.NumberSequenceHandler;
 
 @Plugin(type = Command.class, menuPath = "Plugins>Annotations Merging Tool")
