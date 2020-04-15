@@ -12,7 +12,7 @@
 
 	<groupId>de.mpicbg.ulman</groupId>
 	<artifactId>label-fusion-BIC</artifactId>
-	<version>1.4.5</version>
+	<version>1.4.5-SNAPSHOT</version>
 
 	<build>
 		<plugins>
