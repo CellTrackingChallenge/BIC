@@ -67,7 +67,7 @@
 
 	<name>Automatic Fusion of Segmentation and Tracking Labels @ BIC 2019</name>
 	<description>Original segmentation results fusing algorithm, the inner part of the BIC 2019 paper.</description>
-	<url>https://github.com/CellTrackingChallenge/BIC</url>
+	<url>https://github.com/CellTrackingChallenge/label-fusion-BIC</url>
 	<inceptionYear>2017</inceptionYear>
 
 	<packaging>jar</packaging>
@@ -110,14 +110,14 @@
 
 
 	<scm>
-		<connection>scm:git:git://github.com/CellTrackingChallenge/BIC</connection>
-		<developerConnection>scm:git:git://github.com/CellTrackingChallenge/BIC</developerConnection>
+		<connection>scm:git:git://github.com/CellTrackingChallenge/label-fusion-BIC</connection>
+		<developerConnection>scm:git:git://github.com/CellTrackingChallenge/label-fusion-BIC</developerConnection>
 		<tag>HEAD</tag>
-		<url>https://github.com/CellTrackingChallenge/BIC</url>
+		<url>https://github.com/CellTrackingChallenge/label-fusion-BIC</url>
 	</scm>
 	<issueManagement>
 		<system>GitHub Issues</system>
-		<url>http://github.com/CellTrackingChallenge/BIC/issues</url>
+		<url>http://github.com/CellTrackingChallenge/label-fusion-BIC/issues</url>
 	</issueManagement>
 	<ciManagement>
 		<system>None</system>
