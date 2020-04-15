@@ -5,29 +5,76 @@
 	<parent>
 		<groupId>org.scijava</groupId>
 		<artifactId>pom-scijava</artifactId>
-		<version>27.0.1</version>
+		<version>28.0.0</version>
+		<relativePath />
 	</parent>
 
 
 	<groupId>de.mpicbg.ulman</groupId>
-	<artifactId>CTC-FijiPlugins</artifactId>
+	<artifactId>label-fusion-BIC</artifactId>
 	<version>1.4.5</version>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>pl.project13.maven</groupId>
+				<artifactId>git-commit-id-plugin</artifactId>
+				<version>2.2.4</version>
+				<executions>
+					<execution>
+						<phase>validate</phase>
+						<goals>
+							<goal>revision</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
+					<generateGitPropertiesFile>true</generateGitPropertiesFile>
+					<generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties</generateGitPropertiesFilename>
+					<includeOnlyProperties>
+						<includeOnlyProperty>^git.build.(time|version)$</includeOnlyProperty>
+						<includeOnlyProperty>^git.commit.id.(abbrev|full)$</includeOnlyProperty>
+					</includeOnlyProperties>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<executable>sh</executable>
+					<arguments>
+						<argument>-c</argument>
+						<argument>rm -v ${project.build.outputDirectory}/COMMITrev_*; touch ${project.build.outputDirectory}/COMMITrev_${git.commit.id.abbrev};</argument>
+					</arguments>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
 	<organization>
 		<name>MPI-CBG</name>
 		<url>http://www.mpi-cbg.de</url>
 	</organization>
 
-	<name>CTC FijiPlugins</name>
-	<description>Implementation of measures and front-end plugins related to the CTC paper.</description>
-	<url>https://github.com/xulman/CTC-FijiPlugins</url>
+	<name>Automatic Fusion of Segmentation and Tracking Labels @ BIC 2019</name>
+	<description>Original segmentation results fusing algorithm, the inner part of the BIC 2019 paper.</description>
+	<url>https://github.com/CellTrackingChallenge/BIC</url>
 	<inceptionYear>2017</inceptionYear>
 
-	<packaging>pom</packaging>
+	<packaging>jar</packaging>
 	<licenses>
 		<license>
-			<name>CC0 1.0 Universal License</name>
-			<url>http://creativecommons.org/publicdomain/zero/1.0/</url>
+			<name>Simplified BSD</name>
+			<url>https://choosealicense.com/licenses/bsd-2-clause/</url>
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
@@ -63,28 +110,66 @@
 
 
 	<scm>
-		<connection>scm:git:git://github.com/xulman/CTC-FijiPlugins</connection>
-		<developerConnection>scm:git:git://github.com/xulman/CTC-FijiPlugins</developerConnection>
+		<connection>scm:git:git://github.com/CellTrackingChallenge/BIC</connection>
+		<developerConnection>scm:git:git://github.com/CellTrackingChallenge/BIC</developerConnection>
 		<tag>HEAD</tag>
-		<url>https://github.com/xulman/CTC-FijiPlugins</url>
+		<url>https://github.com/CellTrackingChallenge/BIC</url>
 	</scm>
 	<issueManagement>
 		<system>GitHub Issues</system>
-		<url>http://github.com/xulman/CTC-FijiPlugins/issues</url>
+		<url>http://github.com/CellTrackingChallenge/BIC/issues</url>
 	</issueManagement>
 	<ciManagement>
 		<system>None</system>
 	</ciManagement>
 
 	<properties>
-		<package-name>de.mpicbg.ulman.ctc</package-name>
-		<license.licenseName>cc0</license.licenseName>
-		<license.copyrightOwners>N/A</license.copyrightOwners>
-		<license.projectName>CTC-FijiPlugins</license.projectName>
+		<package-name>de.mpicbg.ulman.fusion</package-name>
+		<license.licenseName>BSD 2-Clause</license.licenseName>
+		<license.copyrightOwners>xulman</license.copyrightOwners>
+		<license.projectName>label-fusion-BIC</license.projectName>
 	</properties>
 
-	<modules>
-		<module>CTC-paper</module>
-		<module>CTC-related</module>
-	</modules>
+	<repositories>
+		<repository>
+			<id>scijava.public</id>
+			<url>https://maven.scijava.org/content/groups/public</url>
+		</repository>
+	</repositories>
+
+	<dependencies>
+		<!-- for reading/saving images -->
+		<dependency>
+			<groupId>sc.fiji</groupId>
+			<artifactId>simplified-io</artifactId>
+			<version>1.0.1</version>
+
+			<exclusions>
+				<exclusion>
+					<groupId>xalan</groupId>
+					<artifactId>xalan</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- the "main paper"-part of this project -->
+		<dependency>
+			<groupId>de.mpicbg.ulman</groupId>
+			<artifactId>CTC-paper-FijiPlugins</artifactId>
+			<version>1.4.5</version>
+		</dependency>
+
+		<!-- 3rd party dependency (not sure where it comes from) -->
+		<dependency>
+			<groupId>org.jhotdraw</groupId>
+			<artifactId>jhotdraw</artifactId>
+			<version>7.6.0</version>
+		</dependency>
+
+		<!-- for GTviaMarkers and to start and test plugins (from the ImageJ GUI) -->
+		<dependency>
+			<groupId>net.imagej</groupId>
+			<artifactId>imagej</artifactId>
+		</dependency>
+	</dependencies>
 </project>
