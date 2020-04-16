@@ -119,7 +119,8 @@
 		<url>http://github.com/CellTrackingChallenge/label-fusion-BIC/issues</url>
 	</issueManagement>
 	<ciManagement>
-		<system>None</system>
+		<system>Travis CI</system>
+		<url>https://travis-ci.com/CellTrackingChallenge/label-fusion-BIC</url>
 	</ciManagement>
 
 	<properties>
