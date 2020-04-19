@@ -30,7 +30,7 @@ import java.awt.Button;
 import java.awt.Dimension;
 
 import de.mpicbg.ulman.fusion.workers.machineGTViaMarkers_Worker;
-import de.mpicbg.ulman.ctc.util.NumberSequenceHandler;
+import net.celltrackingchallenge.measures.util.NumberSequenceHandler;
 
 @Plugin(type = Command.class, menuPath = "Plugins>Annotations Merging Tool")
 public class plugin_GTviaMarkers implements Command

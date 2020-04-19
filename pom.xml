@@ -157,9 +157,9 @@
 
 		<!-- the "main paper"-part of this project -->
 		<dependency>
-			<groupId>de.mpicbg.ulman</groupId>
-			<artifactId>CTC-paper-FijiPlugins</artifactId>
-			<version>1.4.5</version>
+			<groupId>net.celltrackingchallenge</groupId>
+			<artifactId>measures</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
 
 		<!-- 3rd party dependency (not sure where it comes from) -->
