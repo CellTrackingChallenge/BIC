@@ -159,10 +159,10 @@
 		<dependency>
 			<groupId>net.celltrackingchallenge</groupId>
 			<artifactId>measures</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
+			<version>1.0.0</version>
 		</dependency>
 
-		<!-- 3rd party dependency (not sure where it comes from) -->
+		<!-- 3rd party dependency (to display progress bar) -->
 		<dependency>
 			<groupId>org.jhotdraw</groupId>
 			<artifactId>jhotdraw</artifactId>
