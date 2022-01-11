@@ -1,4 +1,6 @@
-![build status](https://api.travis-ci.com/CellTrackingChallenge/label-fusion-BIC.svg?branch=master)
+**Note:** This repository acts as a reference implementation of [LABELS 2017 contribution](https://labels.tue-image.nl/wp-content/uploads/2017/07/LABELS2017_14.pdf), and is no longer being developed.
+
+**Note:** It is replaced with [label-fusion-ng](https://github.com/CellTrackingChallenge/label-fusion-ng).
 
 Welcome
 -------
